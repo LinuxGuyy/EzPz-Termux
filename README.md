@@ -59,7 +59,7 @@ After Opening the .bashrc Remove the last line where "ezpz" is written
 
 ---
 
-*Read [License](LICENSE) Before using the program
+*Read [License](LICENSE) Before using the program*
 
 ---
 
