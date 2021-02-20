@@ -1,7 +1,7 @@
 # EzPz-Termux
 EzPz Termux For Lazy Peoples
 
-[<img src="https://img.shields.io/badge/LICENSE-Custom-blue?style=for-the-badge">](LICENSE) [<img src="https://img.shields.io/badge/Latest%20Version-1.0-orange?style=for-the-badge">](imghide-gui.py) [<img src="https://img.shields.io/github/repo-size/LinuxGuyy/EzPz-Termux?label=Repository%20Size&style=for-the-badge">](https://github.com/LinuxGuyy/EzPz-Termux)
+[<img src="https://img.shields.io/badge/LICENSE-Custom-blue?style=for-the-badge">](LICENSE) [<img src="https://img.shields.io/badge/Latest%20Version-1.0-orange?style=for-the-badge">](https://github.com/LinuxGuyy/EzPz-Termux) [<img src="https://img.shields.io/maintenance/yes/2021?style=for-the-badge">](https://github.com/LinuxGuyy/EzPz-Termux)
 
 [EzPz](ezpz) is a Script made for Termux Users, it is Inspired by [LazyScript](https://github.com/arismelachroinos/lscript), This is a Beta Version i will add more options Soon!!!
 
