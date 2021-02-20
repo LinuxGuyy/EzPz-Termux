@@ -1,0 +1,135 @@
+#!/usr/bin/env python
+#v1.0
+try:
+	from datetime import datetime
+	import sys, time, os, platform, requests
+
+	try:
+		user = sys.argv[1]
+	except IndexError:
+		try:
+			import getpass
+			user = getpass.getuser()
+		except:
+			user = 'EzPz user'
+
+	class color:
+		OKCYAN = '\033[96m'
+		OKGREEN = '\033[92m'
+		WARNING = '\033[93m'
+		FAIL = '\033[91m'
+		ENDC = '\033[39m'
+
+	if platform.python_version() < '3.0.0':
+		print(f"  {color.FAIL}Python Version 3.0 Or Greater Required{color.ENDC}")
+		exit(0)
+
+	def print_slow(string):
+		for letter in string:
+			sys.stdout.write(letter)
+			sys.stdout.flush()
+			time.sleep(0.07)
+
+	def installEzPz():
+		packages = ['python', 'python2', 'fish', 'ruby', 'git', 'php', 'perl', 'nmap', 'netcat', 'bash', 'zsh', 'busybox', 'clang', 'dart', 'nano', 'emacs', 'micro', 'vim', 'exiftool', 'gnupg', 'w3m', 'hydra', 'figlet', 'cowsay', 'curl', 'tar', 'tor', 'zip', 'unzip', 'wget', 'wcalc', 'bmon', 'unrar', 'toilet', 'proot', 'net-tools', 'golang', 'mariadb', 'rust', 'radare2', 'screenfetch', 'yarn', 'sqlite', 'coreutils', 'openssl', 'cmatrix', 'openssh']
+		for package in packages:
+			print(f'  {color.WARNING}Trying To install {package}{color.ENDC}')
+			os.system(f'pkg install {package}')
+
+	def cleanSystem1():
+		print(f'  {color.WARNING}Removing outdated .deb files from the cache{color.ENDC}')
+		os.system('apt autoclean')
+
+	def cleanSystem2():
+		print(f'  {color.WARNING}Removing all .deb files from the cache{color.ENDC}')
+		os.system('apt clean')
+
+	def showSystemStats():
+		try:
+			os.system('clear')
+			from os.path import isfile
+			if isfile(f"{os.environ['PREFIX']}/.config/ezpz/fetchData"):
+				import subprocess
+				return subprocess.getoutput(f"bash {os.environ['PREFIX']}/.config/ezpz/fetchData")
+		except:
+			return "Unable To Detect"
+
+	def checkForUpdate():
+		page = requests.get('https://pastebin.com/raw/PrYBfpJw')
+		version = str(page.text.strip())
+		if version == "v1.0":
+			print(f"  {color.OKGREEN}EzPz is Up To Date !!!{color.ENDC}")
+		else:
+			print(f"  {color.WARNING}A New Version Of EzPz ({version}) is Out Now !!!\n  Get It From https://github.com/LinuxGuyy/EzPz-Termux{color.ENDC}")
+
+	def showCredits():
+		os.system('clear')
+		print("  Credits:")
+		print(f"  {color.OKGREEN}Author:{color.ENDC} LinuxGuyy")
+		print(f"    {color.OKGREEN}GitHub:{color.ENDC} github.com/LinuxGuyy")
+		print(f"    {color.OKGREEN}Telegram:{color.ENDC} t.me/LinuxGuyy")
+		print(f"    {color.OKGREEN}Twitter:{color.ENDC} twitter.com/LinuxGuyy\n")
+		print(f"  {color.OKGREEN}Inspiration:{color.ENDC} github.com/arismelachroinos/lscript")
+		print(f"  {color.OKGREEN}System Information:{color.ENDC} github.com/KittyKatt/screenFetch")
+
+	welcomeFlag = True
+
+	def onStart():
+		global welcomeFlag
+		while True:
+			os.system('clear')
+			logo = f"{color.OKGREEN}    _____     ____\n   | ____|___|  _ \ ____\n   |  _| |_  | |_) |_  /\n   | |___ / /|  __/ / /\n   |_____/___|_|   /___|\n|-------- TERMUX ---------|\n|______By_@LinuxGuyy______|{color.ENDC}\n"
+			print(logo)
+			if not welcomeFlag:
+				print(f"  Welcome {user}\n")
+			else:
+				print_slow(f"  Welcome {user}\n\n")
+				welcomeFlag = False
+
+			print(f"  {color.OKCYAN}Choose Any One:\n  0. Update & Upgrade\n  1. Clean Outdated Files\n  2. Clean Unwanted Files\n  3. Install EzPz Packages\n  4. List Installed Packages\n  5. Use Bash\n  6. System Information\n  7. Exit\n  8. Credits\n  9. Check For Update{color.ENDC}")
+			opt = str(input("  ~$ "))[0]
+
+			if opt == '0':
+				os.system('pkg update')
+				os.system('pkg uprade')
+				input(f'  {color.OKGREEN}Task Completed, Press Enter To Continue{color.ENDC}\n')
+			elif opt == '1':
+				cleanSystem1()
+				input(f'  {color.OKGREEN}Task Completed, Press Enter To Continue{color.ENDC}\n')
+			elif opt == '2':
+				cleanSystem2()
+				input(f'  {color.OKGREEN}Task Completed, Press Enter To Continue{color.ENDC}\n')
+			elif opt == '3':
+				installEzPz()
+				input(f'  {color.OKGREEN}Task Completed, Press Enter To Continue{color.ENDC}\n')
+			elif opt == '4':
+				os.system('clear && pkg list-installed')
+				input(f'  {color.OKGREEN}Press Enter To Continue{color.ENDC}\n')
+			elif opt == '5':
+				os.system('bash')
+			elif opt == '6':
+				print_slow(f"  {color.WARNING}Getting System Information Please Wait!{color.ENDC}\n")
+				print(showSystemStats())
+				input(f'  {color.OKGREEN}Press Enter To Continue{color.ENDC}\n')
+			elif opt == '7':
+				print("  Thanks For Using EzPz")
+				exit(0)
+			elif opt == '8':
+				showCredits()
+				input(f'  {color.OKGREEN}Press Enter To Continue{color.ENDC}\n')
+			elif opt == '9':
+				checkForUpdate()
+				input(f'  {color.OKGREEN}Press Enter To Continue{color.ENDC}\n')
+			else:
+				input(f'  {color.FAIL}Invalid Option provided, Press Enter To Continue{color.ENDC}\n')
+
+	onStart()
+except IndexError:
+	input(f' \033[91m Invalid Option provided, Press Enter To Continue\033[39m\n')
+	onStart()
+except ImportError:
+	print(f"  Can't Import Required Module \033[39m")
+	exit(1)
+except KeyboardInterrupt:
+	print(f"  Thanks For Using EzPz \033[39m")
+	exit(0)
