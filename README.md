@@ -47,7 +47,7 @@ After Opening the .bashrc Remove the last line where "ezpz" is written
 
 ---
 
-[<img src="https://img.shields.io/github/followers/Majnu007?label=GitHub&logo=github&style=for-the-badge">](https://github.com/MajnuBhai007)
+[<img src="https://img.shields.io/github/followers/Majnu007?label=GitHub&logo=github&style=for-the-badge">](https://github.com/MajnuBhai007) <br />
 [<img src="https://img.shields.io/badge/Queries%20%3F-Telegram-0088cc?style=for-the-badge&logo=telegram">](https://t.me/MajnuBhai007)
 
 ---
