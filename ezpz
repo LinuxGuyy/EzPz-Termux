@@ -65,10 +65,9 @@ try:
 	def showCredits():
 		os.system('clear')
 		print("  Credits:")
-		print(f"  {color.OKGREEN}Author:{color.ENDC} LinuxGuyy")
-		print(f"    {color.OKGREEN}GitHub:{color.ENDC} github.com/LinuxGuyy")
-		print(f"    {color.OKGREEN}Telegram:{color.ENDC} t.me/LinuxGuyy")
-		print(f"    {color.OKGREEN}Twitter:{color.ENDC} twitter.com/LinuxGuyy\n")
+		print(f"  {color.OKGREEN}Author:{color.ENDC} Majnu Bhai")
+		print(f"    {color.OKGREEN}GitHub:{color.ENDC} github.com/Majnu007")
+		print(f"    {color.OKGREEN}Telegram:{color.ENDC} t.me/MajnuBhai007\n")
 		print(f"  {color.OKGREEN}Inspiration:{color.ENDC} github.com/arismelachroinos/lscript")
 		print(f"  {color.OKGREEN}System Information:{color.ENDC} github.com/KittyKatt/screenFetch")
 
@@ -78,7 +77,7 @@ try:
 		global welcomeFlag
 		while True:
 			os.system('clear')
-			logo = f"{color.OKGREEN}    _____     ____\n   | ____|___|  _ \ ____\n   |  _| |_  | |_) |_  /\n   | |___ / /|  __/ / /\n   |_____/___|_|   /___|\n|-------- TERMUX ---------|\n|______By_@LinuxGuyy______|{color.ENDC}\n"
+			logo = f"{color.OKGREEN}    _____     ____\n   | ____|___|  _ \ ____\n   |  _| |_  | |_) |_  /\n   | |___ / /|  __/ / /\n   |_____/___|_|   /___|\n|-------- TERMUX ---------|\n|_______By_@Majnu007______|{color.ENDC}\n"
 			print(logo)
 			if not welcomeFlag:
 				print(f"  Welcome {user}\n")

@@ -16,4 +16,4 @@ os.system(f'cp ezpz $PREFIX/bin/')
 with open(f"{expanduser('~')}/.bashrc", 'a') as f:
 	f.write('\n\nezpz')
 
-print("To Remove From Run On Boot goto github.com/LinuxGuyy/EzPz-Termux")
+print("To Remove From Run On Boot goto github.com/Majnu007/EzPz-Termux")

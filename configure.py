@@ -19,3 +19,5 @@ os.system(f"cp fetchData {os.environ['PREFIX']}/.config/ezpz/")
 
 if isfile(f"{os.environ['PREFIX']}/.config/ezpz/fetchData"):
 	print("SuccessFully Configured!")
+else:
+	print("Unable To Configure")
