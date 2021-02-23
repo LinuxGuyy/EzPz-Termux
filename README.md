@@ -9,14 +9,14 @@ EzPz Termux For Lazy Peoples
 
 ## Installation
 ```bash
-pkg install python python-pip git
+pkg install python git
 git clone https://github.com/Majnu007/EzPz-Termux.git "ezpz"
 pip install requests
 cd ezpz/
 python configure.py
 ```
 
-## Usage [Linux]
+## Usage [Termux]
 
 Using Without Installing it as A Global Command
 ```bash
